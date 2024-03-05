@@ -1,0 +1,101 @@
+<%- include("./partials/header.ejs") %>
+
+<% if(locals.weather === true){ %>
+    <div class="main">
+        <div class="current">
+            <div class="title">
+                <div class="date-section">
+                    <h2 class="city"> <%= cityName %> </h2>
+                    <% const passingData = currentDate %>
+                    <% const date = new Date(passingData) %>
+                    <% const currentDay = date.getDay() %>
+                    <% const currentMonth = date.getMonth() %>
+                    <% const dayOfTheCurrentMonth = date.getDate() %>
+                    <% const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] %>
+                    <% const months = ["January","February","March","April","May","June","July","August","September","October","November","December"] %>
+                    <h2 class="currentDate"> <%= days[currentDay] %> , <%= dayOfTheCurrentMonth %>  <%= months[currentMonth]  %> </h2>
+                </div>
+                <div class="local-time-section">
+                    <h2> Local Time -> <%= localTime %> </h2>
+                </div>
+            </div>
+            <div class="bars">
+                <div class="left-bar">
+                    <img src="/images/<%=currentDayImg%>" alt="weather image">
+                    <div class="info">
+                        <h1><%= currentDayTemp %> ° C</h1>
+                        <p><%= currentDayCond %></p>
+                    </div>
+                </div>
+                <div class="right-bar">
+                    <div class="right-top">
+                        <ul class="right-top-items">
+                            <li>
+                                <p><%= currentDayMax %> ° C</p>
+                                <span>High</span>
+                            </li>
+                            <li>
+                                <p><%= currentDayWind %> km/h</p>
+                                <span>Wind</span>
+                            </li>
+                            <li>
+                                <p><%= currentDaySunrise %></p>
+                                <span>Sunrise</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-bottom">
+                        <ul class="right-bottom-items">
+                            <li>
+                                <p><%= currentDayMin %> ° C</p>
+                                <span>Low</span>
+                            </li>
+                            <li>
+                                <p><%= currentDayHum %> </p>
+                                <span>Humidity</span>
+                            </li>
+                            <li>
+                                <p><%= currentDaySunset %></p>
+                                <span>Sunset</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="next-five-days">
+                <div class="forecast first">
+                    <p> <%= days[(currentDay + 1) % 7] %></p>
+                    <p><%= firstDayTemp %> ° C</p>
+                    <img src="/images/<%=firstDayImg%>" alt="weather image">
+                    <p><%= firstDayCond %></p>
+                </div>
+                <div class="forecast second">
+                    <p> <%= days[(currentDay + 2) % 7] %> </p>
+                    <p><%= secondDayTemp %> ° C</p>
+                    <img src="/images/<%=secondDayImg%>" alt="weather image">
+                    <p><%= secondDayCond %></p>
+                </div>
+                <div class="forecast third">
+                    <p> <%= days[(currentDay + 3) % 7] %> </p>
+                    <p><%= thirdDayTemp %> ° C</p>
+                    <img src="/images/<%=thirdDayImg%>" alt="weather image">
+                    <p><%= thirdDayCond %></p>
+                </div>
+                <div class="forecast fourth">
+                    <p> <%= days[(currentDay + 4) % 7] %> </p>
+                    <p><%= fourthDayTemp %> ° C</p>
+                    <img src="/images/<%=fourthDayImg%>" alt="weather image">
+                    <p><%= fourthDayCond %></p>
+                </div>
+                <div class="forecast no-border fifth">
+                    <p> <%= days[(currentDay + 5) % 7] %> </p>
+                    <p><%= fifthDayTemp %> ° C</p>
+                    <img src="/images/<%=fifthDayImg%>" alt="weather image">
+                    <p><%= fifthDayCond %></p>
+                </div>
+            </div>
+            </div>
+    </div>
+<% } %>
+
+<%- include("./partials/footer.ejs") %>
