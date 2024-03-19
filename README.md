@@ -4,7 +4,7 @@ This is a weather forecast web application. If you want to clone this project yo
 
 This app uses WeatherAPI for data and show these data in the screen.
 
-What you can check in this app : Daily forecast and next 5 days forecasts. Todays highest and lowest temperatures, todays wind speed, humidty and todays sunrise and sunset time. Also you can check your locations or any other locations in the world local time. 
+What you can check in this app : Daily forecast and next 2 days forecasts. Todays highest and lowest temperatures, todays wind speed, humidty and todays sunrise and sunset time. Also you can check your locations or any other locations in the world local time. 
 
 for live : https://weathernow-tmm4.onrender.com/
 
