@@ -296,6 +296,10 @@ footer{
     bottom: 0;
 }
 
+.second{
+    border-right: none;
+}
+
 @media (max-width : 900px){
     .current{
         width: 600px;
