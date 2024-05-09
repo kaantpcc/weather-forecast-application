@@ -2,7 +2,6 @@ import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
 
-
 const app = express();
 const port = 3000;
 
@@ -65,7 +64,6 @@ app.post("/search", async (req, res)=>{
     } catch (error) {
         console.error("Hava durumu verisi alinamadi!");
     }
-    
 });
 
 app.listen(port,()=>{
